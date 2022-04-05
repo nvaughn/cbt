@@ -5,7 +5,7 @@ region         = "us-east-1"
 server_type    = "t2.micro"
 subnet_zone    = "us-east-1a"
 vpc_cidr_block = "10.0.0.0/16"
-class_name     = "Linux 101"
+class_name     = "Demo Class"
 web_subnet     = "10.0.100.0/24"
 instance_count = 3
 
