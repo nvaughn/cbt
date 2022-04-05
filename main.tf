@@ -1,10 +1,10 @@
 
 terraform {
+
   cloud {
     organization = "nvaughn"
-
     workspaces {
-      name = "CBT-Nashville"
+      name = "test"
     }
   }
 
@@ -16,6 +16,7 @@ terraform {
     }
   }
 }
+
 
 # Configure the AWS Provider
 provider "aws" {
