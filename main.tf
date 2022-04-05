@@ -1,15 +1,13 @@
 
 terraform {
-
-
   cloud {
     organization = "nvaughn"
+    
     workspaces {
-      name = "CSA"
+      name = "CBT-Nashville"
     }
   }
-
-
+}
   # Lock in our version to 3.x
   required_providers {
     aws = {
