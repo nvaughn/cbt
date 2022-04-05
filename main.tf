@@ -2,12 +2,12 @@
 terraform {
   cloud {
     organization = "nvaughn"
-    
+
     workspaces {
       name = "CBT-Nashville"
     }
   }
-}
+
   # Lock in our version to 3.x
   required_providers {
     aws = {
@@ -16,7 +16,6 @@ terraform {
     }
   }
 }
-
 
 # Configure the AWS Provider
 provider "aws" {
@@ -94,10 +93,10 @@ data "aws_ami" "latest_amazon_linux2" {
 
 #Import existing SSH Key
 
-  resource "aws_key_pair" "this" {
+resource "aws_key_pair" "this" {
   key_name   = var.key_name
   public_key = file(var.public_key)
-  count = var.create_key_pair ? 0 : 1
+  count      = var.create_key_pair ? 0 : 1
 
 }
 
@@ -109,8 +108,8 @@ module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "~> 3.0"
 
-  ami = data.aws_ami.latest_amazon_linux2.id
-  name = "${var.class_name}-Instance#${count.index}"
+  ami                    = data.aws_ami.latest_amazon_linux2.id
+  name                   = "${var.class_name}-Instance#${count.index}"
   instance_type          = var.server_type
   key_name               = var.key_name
   vpc_security_group_ids = [module.ssh_server_sg.security_group_id, module.web_server_sg.security_group_id]
