@@ -22,7 +22,7 @@ The first thing you need to do is clone the repository.
     $ git clone git@github.com:nvaughn/cbt.git <ENTER>
 ```
 
-The main branch contains standard Terraform IaaC for use with Terraform Cloud.
+The main branch contains standard Terraform IaC for use with Terraform Cloud.
 
 Alternatively, if you don't have Git installed on your system you can simply click on the green button 'Clone or Download' available in the top of this Github repository. This will download a fresh copy of the code straight from the main branch.
 
