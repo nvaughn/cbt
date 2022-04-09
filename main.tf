@@ -2,9 +2,9 @@
 terraform {
 
   cloud {
-    organization = "<Organization_Name>"
+    organization = "nvaughn"
     workspaces {
-      name = "<Workspace name>"
+      name = "Nashville"
     }
   }
 
@@ -134,3 +134,20 @@ module "ec2_instance" {
     Environment = "PROD"
   }
 }
+
+
+#####################
+# S3 Bucket
+#####################
+
+module "website_s3_bucket" {
+  source = "git@github.com:nvaughn/website_s3_bucket"
+
+  bucket_name = "cbt-demo-04-11-2022"
+
+  tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
+}
+

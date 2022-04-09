@@ -58,3 +58,8 @@ variable "instance_count" {
   type        = number
 
 }
+
+variable "bucket_name" {
+  type    = string
+  default = "Demo"
+}
