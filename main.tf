@@ -141,10 +141,9 @@ module "ec2_instance" {
 #####################
 
 module "website_s3_bucket" {
-  source = "git@github.com:nvaughn/website_s3_bucket"
+  source = "github.com/nvaughn/website_s3_bucket"
 
   bucket_name = "cbt-demo-04-11-2022"
-
   tags = {
     Terraform   = "true"
     Environment = "dev"
